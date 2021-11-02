@@ -5,7 +5,7 @@ public class Main {
     var total = 0;
 
     for (var argument : args)
-      total += parseInput(argument).intValue();
+      total += parseInput(argument);
 
     System.out.println("The total is: " + total);
   }
