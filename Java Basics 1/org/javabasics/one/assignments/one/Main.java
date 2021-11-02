@@ -1,4 +1,4 @@
-package org.david.assignments.one;
+package org.javabasics.one.assignments.one;
 
 import java.util.function.Predicate;
 

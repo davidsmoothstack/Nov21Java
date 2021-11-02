@@ -1,4 +1,4 @@
-package org.david.assignments.two;
+package org.javabasics.one.assignments.two;
 
 import java.util.Scanner;
 
