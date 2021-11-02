@@ -38,7 +38,7 @@ public class Main {
 
     private static void printIsoscelesTriangle(int width, TriangleGrowth growth) {
         // Triangle in the example always has a padding of 2
-        int padding = 2;
+        var padding = 2;
         int spaceCount;
         int starCount;
 
