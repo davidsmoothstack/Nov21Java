@@ -1,4 +1,4 @@
-package org.javabasics.two.assignments.three;
+package org.javabasics.two.assignments.three.shapes;
 
 public class Circle implements Shape {
   private Double radius;

@@ -1,5 +1,7 @@
 package org.javabasics.two.assignments.three;
 
+import org.javabasics.two.assignments.three.shapes.*;
+
 public class Main {
   public static void main(String[] args) {
     var circle = new Circle(6d);
