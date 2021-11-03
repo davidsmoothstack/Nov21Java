@@ -15,8 +15,8 @@ public class Main {
   }
 
   private static void populate2DArray(Integer[][] arr, Integer min, Integer max) {
-    if (min > max) {
-      System.out.println("Min cannot be greater than max");
+    if (min >= max) {
+      System.out.println("Min must be greater than max");
       System.exit(0);
     }
 
@@ -28,12 +28,13 @@ public class Main {
   private static Integer getLargestElement(Integer[][] arr) {
     int largest = arr[0][0];
 
-    for (int i = 0; i < arr.length; i++)
+    for (int i = 0; i < arr.length; i++) {
       for (int j = 0; j < arr[i].length; j++) {
         var currentInt = arr[i][j];
         if (currentInt > largest)
           largest = currentInt;
       }
+    }
 
     return largest;
   }
