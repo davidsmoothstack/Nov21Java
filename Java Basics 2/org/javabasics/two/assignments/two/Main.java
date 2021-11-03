@@ -4,7 +4,7 @@ public class Main {
   public static void main(String[] args) {
     Integer[][] arr = new Integer[10][10];
 
-    populate2DArray(arr, 1, 100_000);
+    populate2dArray(arr, 1, 100_000);
     var largest = getLargestElement(arr);
 
     System.out.println("The largest element in the array is " + largest);
@@ -14,7 +14,7 @@ public class Main {
     return (int) ((Math.random() * (max - min)) + min);
   }
 
-  private static void populate2DArray(Integer[][] arr, Integer min, Integer max) {
+  private static void populate2dArray(Integer[][] arr, Integer min, Integer max) {
     if (min >= max) {
       System.out.println("Min must be greater than max");
       System.exit(0);
