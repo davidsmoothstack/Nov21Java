@@ -15,7 +15,7 @@ public class IntConsumer extends Thread {
     try {
       while (true) {
         synchronized (buffer) {
-          while (!buffer.isEmpty()) {
+          if (!buffer.isEmpty()) {
             var integer = buffer.iterator().next();
             System.out.println(integer + " consumed");
             buffer.remove(integer);
