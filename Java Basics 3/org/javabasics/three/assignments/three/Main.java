@@ -9,6 +9,7 @@ public class Main {
       var inputPath = Paths.get("Java Basics 3", "org", "javabasics", "three", "assignments", "three", "in", "input.txt");
       var reader = new Scanner(inputPath);
 
+      // Get first char from console args. If there are no args use e as the default value
       var charToCount = (args.length > 0) ? args[0].charAt(0) : 'e';
       var count = 0;
 
