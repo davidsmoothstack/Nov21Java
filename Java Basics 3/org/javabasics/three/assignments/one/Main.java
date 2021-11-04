@@ -9,8 +9,7 @@ import java.util.List;
 public class Main {
   public static void main(String[] args) throws Exception {
     try {
-      var directoryPath = ".";
-      var directories = listSubFiles(directoryPath);
+      var directories = listSubFiles("Java Basics 1", "Java Basics 2", "Java Basics 3");
 
       for (var fileName : directories) {
         System.out.println(fileName);
