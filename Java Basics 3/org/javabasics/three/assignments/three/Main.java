@@ -9,7 +9,7 @@ public class Main {
       var inputPath = Paths.get("Java Basics 3", "org", "javabasics", "three", "assignments", "three", "in", "input.txt");
       var reader = new Scanner(inputPath);
 
-      var charToCount = 'e';
+      var charToCount = (args.length > 0) ? args[0].charAt(0) : 'e';
       var count = 0;
 
       while (reader.hasNextLine()) {
