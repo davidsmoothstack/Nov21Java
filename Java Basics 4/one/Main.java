@@ -1,28 +1,25 @@
 package one;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Main {
   private volatile static Main instance;
 
   public static void main(String[] args) {
-    var threadList = Arrays.asList(new Thread[10]);
+    var objectList = Arrays.asList(new Object[10]);
 
-    threadList.stream()
-        .map(t -> new Thread(
-            () -> {
-            }))
+    // All instances should have the same hash code
+    objectList.stream()
         .parallel()
-        .forEach(t -> t.start());
+        .map(obj -> Main.getInstance())
+        .forEach(obj -> System.out.println("Hash: " + obj.hashCode()));
   }
 
   public static Main getInstance() {
     if (instance == null) {
       synchronized (Main.class) {
-        if (instance == null) {
+        if (instance == null)
           instance = new Main();
-        }
       }
     }
 
