@@ -31,9 +31,7 @@ public class IntConsumer extends Thread {
         }
 
         Thread.sleep(Main.randomRange(3_000, 5_000));
-
       }
-
     }
     catch (Exception e) {
       System.out.println("Error in consumer: " + e.getMessage());
