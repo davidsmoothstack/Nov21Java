@@ -7,7 +7,7 @@ public class Main {
   public static Random rng = new Random();
 
   public static void main(String[] args) {
-    initialize(1, 2, 2);
+    initialize(5, 20, 20);
   }
 
   /**
