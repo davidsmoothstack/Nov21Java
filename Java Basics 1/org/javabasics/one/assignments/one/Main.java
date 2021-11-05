@@ -43,7 +43,7 @@ public class Main {
         int starCount;
 
         if (growth == TriangleGrowth.GROW) {
-            spaceCount = width - padding;
+            spaceCount = Math.floorDiv(width, 2) + padding;
             starCount = 1;
 
             while (starCount <= width) {
