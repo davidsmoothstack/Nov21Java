@@ -17,7 +17,7 @@ public class Main {
    * @param consumerCount Total number of IntConsumers
    * @param producerCount Total number of IntBuffers
    */
-  public static void initialize(Integer bufferSize, Integer consumerCount, Integer producerCount) {
+  public static void initialize(Integer bufferSize, Integer producerCount, Integer consumerCount) {
     var buffer = new IntBuffer(bufferSize);
 
     // Create and run the producers
