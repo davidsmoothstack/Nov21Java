@@ -1,7 +1,5 @@
 package three;
 
-import javax.swing.text.PlainView;
-
 public class IntProducer extends Thread {
   private IntBuffer buffer;
   private static volatile int count;
@@ -16,7 +14,9 @@ public class IntProducer extends Thread {
   @Override
   public void run() {
     try {
+
       while (true) {
+
         synchronized (buffer) {
           if (buffer.isFull())
             continue;
