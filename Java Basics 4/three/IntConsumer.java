@@ -30,7 +30,7 @@ public class IntConsumer extends Thread {
               String.format("Consumer %d consumed %d", id, integer));
         }
 
-        Thread.sleep(Main.randomRange(0, 3_000));
+        Thread.sleep(Main.randomRange(3_000, 5_000));
 
       }
 

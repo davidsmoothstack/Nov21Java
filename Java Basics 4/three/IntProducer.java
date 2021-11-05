@@ -28,7 +28,7 @@ public class IntProducer extends Thread {
               String.format("Producer %d produced %d", id, randomInt));
         }
 
-        Thread.sleep(Main.randomRange(0, 3_000));
+        Thread.sleep(Main.randomRange(3_000, 5_000));
       }
     }
     catch (Exception e) {
