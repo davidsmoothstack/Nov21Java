@@ -20,7 +20,7 @@ public class IntProducer extends Thread {
                         continue;
 
                     var randomInt = Main.randomRange(1, 999);
-                    buffer.add(randomInt);
+                    buffer.push(randomInt);
 
                     System.out.println(
                             String.format("Producer %d produced %d", id, randomInt));

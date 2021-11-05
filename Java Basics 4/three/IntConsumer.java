@@ -21,11 +21,10 @@ public class IntConsumer extends Thread {
                     if (buffer.isEmpty())
                         continue;
 
-                    var integer = buffer.iterator().next();
-                    buffer.remove(integer);
+                    var value = buffer.pop().get();
 
                     System.out.println(
-                            String.format("Consumer %d consumed %d", id, integer));
+                            String.format("Consumer %d consumed %d", id, value));
                 }
 
                 Thread.sleep(Main.randomRange(3_000, 5_000));

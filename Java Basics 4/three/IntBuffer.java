@@ -3,6 +3,7 @@ package three;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.Optional;
 
 public class IntBuffer implements Iterable<Integer> {
     private Collection<Integer> intCollection;
@@ -26,12 +27,18 @@ public class IntBuffer implements Iterable<Integer> {
         return intCollection.size() == 0;
     }
 
-    public boolean add(Integer e) {
+    public boolean push(Integer e) {
         return intCollection.add(e);
     }
 
-    public boolean remove(Object o) {
-        return intCollection.remove(o);
+    public Optional<Integer> pop() {
+        if (isEmpty())
+            return Optional.empty();
+
+        var removed = iterator().next();
+        intCollection.remove(removed);
+
+        return Optional.of(removed);
     }
 
     @Override
