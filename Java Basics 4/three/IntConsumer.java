@@ -4,10 +4,13 @@ import java.lang.Thread;
 
 public class IntConsumer extends Thread {
   private IntBuffer buffer;
+  private static volatile int count;
+  public Integer id;
 
   public IntConsumer(IntBuffer buffer) {
     super();
     this.buffer = buffer;
+    this.id = ++count;
   }
 
   @Override
@@ -17,12 +20,14 @@ public class IntConsumer extends Thread {
         synchronized (buffer) {
           if (!buffer.isEmpty()) {
             var integer = buffer.iterator().next();
-            System.out.println(integer + " consumed");
             buffer.remove(integer);
+
+            System.out.println(
+                String.format("Consumer %d consumed %d", id, integer));
           }
         }
 
-        Thread.sleep(Main.randomRange(500, 5_000));
+        Thread.sleep(Main.randomRange(0, 3_000));
       }
     }
     catch (Exception e) {

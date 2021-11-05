@@ -4,10 +4,13 @@ import javax.swing.text.PlainView;
 
 public class IntProducer extends Thread {
   private IntBuffer buffer;
+  private static volatile int count;
+  public Integer id;
 
   public IntProducer(IntBuffer buffer) {
     super();
     this.buffer = buffer;
+    this.id = ++count;
   }
 
   @Override
@@ -20,10 +23,12 @@ public class IntProducer extends Thread {
 
           var randomInt = Main.randomRange(1, 100_000);
           buffer.add(randomInt);
-          System.out.println(randomInt + " produced");
+
+          System.out.println(
+              String.format("Producer %d produced %d", id, randomInt));
         }
 
-        Thread.sleep(Main.randomRange(200, 700));
+        Thread.sleep(Main.randomRange(0, 3_000));
       }
     }
     catch (Exception e) {
