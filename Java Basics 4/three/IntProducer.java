@@ -21,7 +21,7 @@ public class IntProducer extends Thread {
           if (buffer.isFull())
             continue;
 
-          var randomInt = Main.randomRange(1, 100_000);
+          var randomInt = Main.randomRange(1, 999);
           buffer.add(randomInt);
 
           System.out.println(
