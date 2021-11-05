@@ -43,7 +43,7 @@ public class Main {
         int starCount;
 
         if (growth == TriangleGrowth.GROW) {
-            spaceCount = width - 2;
+            spaceCount = width - padding;
             starCount = 1;
 
             while (starCount <= width) {
@@ -53,7 +53,8 @@ public class Main {
                 starCount += 2;
                 spaceCount--;
             }
-        } else {
+        }
+        else {
             spaceCount = padding;
             starCount = width;
 
