@@ -29,14 +29,24 @@ public class IntBuffer implements Collection<Integer> {
   }
 
   @Override
-  public boolean contains(Object o) {
-    // TODO Auto-generated method stub
-    return false;
+  public boolean add(Integer e) {
+    return intCollection.add(e);
+  }
+
+  @Override
+  public boolean remove(Object o) {
+    return intCollection.remove(o);
   }
 
   @Override
   public Iterator<Integer> iterator() {
     return intCollection.iterator();
+  }
+
+  @Override
+  public boolean contains(Object o) {
+    // TODO Auto-generated method stub
+    return false;
   }
 
   @Override
@@ -49,16 +59,6 @@ public class IntBuffer implements Collection<Integer> {
   public <T> T[] toArray(T[] a) {
     // TODO Auto-generated method stub
     return null;
-  }
-
-  @Override
-  public boolean add(Integer e) {
-    return intCollection.add(e);
-  }
-
-  @Override
-  public boolean remove(Object o) {
-    return intCollection.remove(o);
   }
 
   @Override
@@ -88,7 +88,5 @@ public class IntBuffer implements Collection<Integer> {
   @Override
   public void clear() {
     // TODO Auto-generated method stub
-
   }
-
 }
