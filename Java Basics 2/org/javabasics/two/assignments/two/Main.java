@@ -7,11 +7,10 @@ public class Main {
         populate2dArray(arr, 1, 100_000);
         var largest = getLargestElement(arr);
 
-        System.out.println("The largest element in the array is " +
-                largest.value() +
-                " at position" +
-                " x: " + largest.positionX() +
-                " y: " + largest.positionY());
+        System.out.printf("The largest element in the array is %d at position array[%d][%d]",
+                largest.value(),
+                largest.positionX(),
+                largest.positionY());
     }
 
     private static Integer getRandomNumber(Integer min, Integer max) {
