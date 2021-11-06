@@ -1,7 +1,5 @@
 package three;
 
-import java.lang.Thread;
-
 public class IntConsumer extends Thread {
     private IntBuffer buffer;
     private static volatile int count;

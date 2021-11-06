@@ -1,11 +1,11 @@
 package four.tests;
 
-import static org.junit.Assert.assertEquals;
-
 import org.junit.Before;
 import org.junit.Test;
 
 import four.Line;
+
+import static org.junit.Assert.assertEquals;
 
 public class LineTests {
     private Line sut;
