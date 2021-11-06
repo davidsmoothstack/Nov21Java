@@ -14,7 +14,7 @@
 
 2. Subtract 1 week from the date, then get the 5th day of that week
 
-3. ZoneOffset show thes UTC offset where ZoneId shows the timezone ID
+3. ZoneOffset show the UTC offset where ZoneId shows the timezone ID
 
 4. [View Code](datetime/QuestionFour.java)
 
