@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Game {
-    private final List<GameOverListener> listeners = new ArrayList<GameOverListener>();
+    private final List<GameOverListener> listeners = new ArrayList<>();
     private final int answer;
     // Accept answers between upper and lower ranges
     private final int upperRange;
