@@ -20,8 +20,7 @@ public class IntConsumer extends Thread {
 
                     final var value = this.buffer.pop().get();
 
-                    System.out.println(
-                            String.format("Consumer %d consumed %d", this.id, value));
+                    System.out.printf("Consumer %d consumed %d\n", this.id, value);
                 }
 
                 Thread.sleep(Main.randomRange(3_000, 5_000));

@@ -1,5 +1,6 @@
 package datetime;
 
+import java.io.PrintStream;
 import java.time.LocalDate;
 
 public class QuestionFive {
@@ -13,7 +14,7 @@ public class QuestionFive {
             final var monthName = tempDate.getMonth();
             final var monthDays = tempDate.lengthOfMonth();
 
-            System.out.println(String.format("%s has %d days", monthName, monthDays));
+            PrintStream printf = System.out.printf("%s has %d days\n", monthName, monthDays);
 
             tempDate = tempDate.plusMonths(1);
         }

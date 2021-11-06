@@ -21,8 +21,7 @@ public class IntProducer extends Thread {
                     final var randomInt = Main.randomRange(1, 999);
                     this.buffer.push(randomInt);
 
-                    System.out.println(
-                            String.format("Producer %d produced %d", this.id, randomInt));
+                    System.out.printf("Producer %d produced %d\n", this.id, randomInt);
                 }
 
                 Thread.sleep(Main.randomRange(3_000, 5_000));
