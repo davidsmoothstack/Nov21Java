@@ -1,14 +1,14 @@
 package three;
 
 public class IntProducer extends Thread {
-    private IntBuffer buffer;
     private static volatile int count;
     public Integer id;
+    private IntBuffer buffer;
 
     public IntProducer(IntBuffer buffer) {
         super();
         this.buffer = buffer;
-        this.id = ++count;
+        this.id = ++ count;
     }
 
     @Override

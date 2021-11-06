@@ -6,8 +6,8 @@ import java.util.Iterator;
 import java.util.Optional;
 
 public class IntBuffer implements Iterable<Integer> {
-    private Collection<Integer> intCollection;
     public Integer maxSize;
+    private Collection<Integer> intCollection;
 
     public IntBuffer(Integer maxSize) {
         super();

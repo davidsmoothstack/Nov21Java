@@ -1,7 +1,7 @@
 package org.javabasics.two.assignments.three.shapes;
 
 public interface Shape {
-  Double calculateArea();
+    Double calculateArea();
 
-  void display();
+    void display();
 }

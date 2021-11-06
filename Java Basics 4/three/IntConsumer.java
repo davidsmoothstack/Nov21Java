@@ -1,14 +1,14 @@
 package three;
 
 public class IntConsumer extends Thread {
-    private IntBuffer buffer;
     private static volatile int count;
     public Integer id;
+    private IntBuffer buffer;
 
     public IntConsumer(IntBuffer buffer) {
         super();
         this.buffer = buffer;
-        this.id = ++count;
+        this.id = ++ count;
     }
 
     @Override

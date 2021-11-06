@@ -12,7 +12,7 @@ public class Main {
 
     /**
      * Creates a single buffer with any number of IntBuffers or IntProducers
-     * 
+     *
      * @param bufferSize    Maximum size the buffer can contain
      * @param consumerCount Total number of IntConsumers
      * @param producerCount Total number of IntBuffers

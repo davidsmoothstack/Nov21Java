@@ -28,7 +28,7 @@ public class Main {
 
         if (growth == TriangleGrowth.SHRINK) {
             i = width;
-            iterator = -1;
+            iterator = - 1;
             loopPredicate = n -> n > 0;
         }
 
