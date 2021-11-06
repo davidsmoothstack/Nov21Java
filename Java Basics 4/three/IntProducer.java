@@ -3,7 +3,7 @@ package three;
 public class IntProducer extends Thread {
     private static volatile int count;
     private final IntBuffer buffer;
-    public Integer id;
+    public final Integer id;
 
     public IntProducer(final IntBuffer buffer) {
         this.buffer = buffer;

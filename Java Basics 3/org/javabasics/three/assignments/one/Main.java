@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Main {
-    public static void main(final String[] args) throws Exception {
+    public static void main(final String[] args) {
         try {
             final var directories = listSubFiles("Java Basics 1", "Java Basics 2", "Java Basics 3");
 

@@ -14,7 +14,7 @@ public class QuestionFive {
             final var monthName = tempDate.getMonth();
             final var monthDays = tempDate.lengthOfMonth();
 
-            PrintStream printf = System.out.printf("%s has %d days\n", monthName, monthDays);
+            System.out.printf("%s has %d days\n", monthName, monthDays);
 
             tempDate = tempDate.plusMonths(1);
         }

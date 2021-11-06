@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.stream.Stream;
 
 public class Main {
-    public static Random rng = new Random();
+    public static final Random rng = new Random();
 
     public static void main(final String[] args) {
         initialize(5, 20, 20);

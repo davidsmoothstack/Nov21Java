@@ -6,7 +6,7 @@ import java.util.Random;
 import java.util.stream.Collectors;
 
 public class QuestionTwo {
-    static Random rng = new Random();
+    static final Random rng = new Random();
 
     public static void main(final String[] args) {
         final var intCollection = Arrays.stream(new Integer[30]).map(i -> QuestionTwo.rng.nextInt(99)).toList();

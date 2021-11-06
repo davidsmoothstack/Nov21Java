@@ -7,7 +7,7 @@ import java.util.Optional;
 
 public class IntBuffer implements Iterable<Integer> {
     private final Collection<Integer> intCollection;
-    public Integer maxSize;
+    public final Integer maxSize;
 
     public IntBuffer(final Integer maxSize) {
         intCollection = new ArrayList<>();
@@ -26,8 +26,8 @@ public class IntBuffer implements Iterable<Integer> {
         return this.intCollection.size() == 0;
     }
 
-    public boolean push(final Integer e) {
-        return this.intCollection.add(e);
+    public void push(final Integer e) {
+        this.intCollection.add(e);
     }
 
     public Optional<Integer> pop() {

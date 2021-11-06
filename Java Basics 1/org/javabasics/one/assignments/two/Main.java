@@ -3,7 +3,7 @@ package org.javabasics.one.assignments.two;
 import java.util.Scanner;
 
 public class Main implements GameOverListener {
-    Scanner scanner = new Scanner(System.in);
+    final Scanner scanner = new Scanner(System.in);
 
     public static void main(final String[] args) {
         new Main().startGame();
@@ -34,7 +34,6 @@ public class Main implements GameOverListener {
             }
             catch (final Exception e) {
                 System.out.println("Invalid number. Please guess again");
-                continue;
             }
         }
     }
