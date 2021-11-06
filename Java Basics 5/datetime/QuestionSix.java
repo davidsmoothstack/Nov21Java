@@ -4,9 +4,9 @@ import java.time.DayOfWeek;
 import java.time.LocalDate;
 
 public class QuestionSix {
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         // Use this dates month
-        var date = LocalDate.now();
+        final var date = LocalDate.now();
 
         var tempDate = date.withDayOfMonth(1);
 

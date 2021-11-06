@@ -3,7 +3,7 @@ package org.javabasics.one.assignments.one;
 import java.util.function.Predicate;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         System.out.println("1)");
         printRightTriangle(4, TriangleGrowth.GROW);
         repeat(9, ".", true);
@@ -21,14 +21,14 @@ public class Main {
         printIsoscelesTriangle(7, TriangleGrowth.SHRINK);
     }
 
-    private static void printRightTriangle(int width, TriangleGrowth growth) {
+    private static void printRightTriangle(final int width, final TriangleGrowth growth) {
         var i = 1;
         var iterator = 1;
         Predicate<Integer> loopPredicate = n -> n <= width;
 
         if (growth == TriangleGrowth.SHRINK) {
             i = width;
-            iterator = - 1;
+            iterator = -1;
             loopPredicate = n -> n > 0;
         }
 
@@ -36,9 +36,9 @@ public class Main {
             repeat(i, "*", true);
     }
 
-    private static void printIsoscelesTriangle(int width, TriangleGrowth growth) {
+    private static void printIsoscelesTriangle(final int width, final TriangleGrowth growth) {
         // Triangle in the example always has a padding of 2
-        var padding = 2;
+        final var padding = 2;
         int spaceCount;
         int starCount;
 
@@ -68,7 +68,7 @@ public class Main {
         }
     }
 
-    private static void repeat(int count, String content, boolean addNewLine) {
+    private static void repeat(final int count, final String content, final boolean addNewLine) {
         for (var i = 0; i < count; i++)
             System.out.print(content);
 

@@ -1,12 +1,12 @@
 package two;
 
 public class Main {
-    public static void main(String[] args) {
-        final Object lockObj1 = new Object();
-        final Object lockObj2 = new Object();
+    public static void main(final String[] args) {
+        Object lockObj1 = new Object();
+        Object lockObj2 = new Object();
 
         // Thread 1
-        var t1 = new Thread(() -> {
+        final var t1 = new Thread(() -> {
             synchronized (lockObj1) {
                 try {
                     System.out.println("T1 locked resource 1");
@@ -16,7 +16,7 @@ public class Main {
                         System.out.println("T1 locked resource 2");
                     }
                 }
-                catch (Exception e) {
+                catch (final Exception e) {
                     System.out.println(e.getMessage());
                 }
             }
@@ -26,7 +26,7 @@ public class Main {
         });
 
         // Thread 2
-        var t2 = new Thread(() -> {
+        final var t2 = new Thread(() -> {
             synchronized (lockObj2) {
                 try {
                     System.out.println("T2 locked resource 2");
@@ -36,7 +36,7 @@ public class Main {
                         System.out.println("T2 locked resource 1");
                     }
                 }
-                catch (Exception e) {
+                catch (final Exception e) {
                     System.out.println(e.getMessage());
                 }
             }

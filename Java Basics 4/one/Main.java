@@ -3,26 +3,26 @@ package one;
 import java.util.Arrays;
 
 public class Main {
-    private volatile static Main instance;
+    private static volatile Main instance;
 
-    public static void main(String[] args) {
-        var objectList = Arrays.asList(new Object[10]);
+    public static void main(final String[] args) {
+        final var objectList = Arrays.asList(new Object[10]);
 
         // All instances should have the same hash code
         objectList.stream()
                 .parallel()
-                .map(obj -> Main.getInstance())
+                .map(obj -> getInstance())
                 .forEach(obj -> System.out.println("Hash: " + obj.hashCode()));
     }
 
     public static Main getInstance() {
-        if (instance == null) {
+        if (Main.instance == null) {
             synchronized (Main.class) {
-                if (instance == null)
-                    instance = new Main();
+                if (Main.instance == null)
+                    Main.instance = new Main();
             }
         }
 
-        return instance;
+        return Main.instance;
     }
 }

@@ -1,11 +1,11 @@
 package org.javabasics.two.assignments.two;
 
 public class Main {
-    public static void main(String[] args) {
-        Integer[][] arr = new Integer[100][100];
+    public static void main(final String[] args) {
+        final Integer[][] arr = new Integer[100][100];
 
-        populate2dArray(arr, 1, 100_000);
-        var largest = getLargestElement(arr);
+        Main.populate2dArray(arr, 1, 100_000);
+        final var largest = Main.getLargestElement(arr);
 
         System.out.printf("The largest element in the array is %d at position array[%d][%d]",
                 largest.value(),
@@ -13,11 +13,11 @@ public class Main {
                 largest.positionY());
     }
 
-    private static Integer getRandomNumber(Integer min, Integer max) {
+    private static Integer getRandomNumber(final Integer min, final Integer max) {
         return (int) ((Math.random() * (max - min)) + min);
     }
 
-    private static void populate2dArray(Integer[][] arr, Integer min, Integer max) {
+    private static void populate2dArray(final Integer[][] arr, final Integer min, final Integer max) {
         if (min >= max) {
             System.out.println("Min must be greater than max");
             System.exit(0);
@@ -25,15 +25,15 @@ public class Main {
 
         for (int i = 0; i < arr.length; i++)
             for (int j = 0; j < arr[i].length; j++)
-                arr[i][j] = getRandomNumber(min, max);
+                arr[i][j] = Main.getRandomNumber(min, max);
     }
 
-    private static BiggestElement getLargestElement(Integer[][] arr) {
+    private static BiggestElement getLargestElement(final Integer[][] arr) {
         var largest = new BiggestElement(arr[0][0], 0, 0);
 
         for (int y = 0; y < arr.length; y++) {
             for (int x = 0; x < arr[y].length; x++) {
-                var currentInt = arr[y][x];
+                final var currentInt = arr[y][x];
                 if (currentInt > largest.value())
                     largest = new BiggestElement(currentInt, y, x);
             }

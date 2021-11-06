@@ -2,22 +2,22 @@ package org.javabasics.two.assignments.three.shapes;
 
 public class Rectangle implements Shape {
 
-    private double length;
-    private double width;
+    private final double length;
+    private final double width;
 
-    public Rectangle(double length, double width) {
+    public Rectangle(final double length, final double width) {
         this.length = length;
         this.width = width;
     }
 
     @Override
     public Double calculateArea() {
-        return length * width;
+        return this.length * this.width;
     }
 
     @Override
     public void display() {
-        System.out.println("The width of this rectangle is " + calculateArea());
+        System.out.println("The width of this rectangle is " + this.calculateArea());
     }
 
 }

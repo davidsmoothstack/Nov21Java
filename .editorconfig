@@ -15,7 +15,7 @@ ij_visual_guides = none
 ij_wrap_on_typing = true
 
 [*.java]
-max_line_length = 200
+max_line_length = 150
 ij_java_align_consecutive_assignments = false
 ij_java_align_consecutive_variable_declarations = false
 ij_java_align_group_field_declarations = false
@@ -211,7 +211,7 @@ ij_java_spaces_around_multiplicative_operators = true
 ij_java_spaces_around_relational_operators = true
 ij_java_spaces_around_shift_operators = true
 ij_java_spaces_around_type_bounds_in_type_parameters = true
-ij_java_spaces_around_unary_operator = true
+ij_java_spaces_around_unary_operator = false
 ij_java_spaces_within_angle_brackets = false
 ij_java_spaces_within_annotation_parentheses = false
 ij_java_spaces_within_array_initializer_braces = true

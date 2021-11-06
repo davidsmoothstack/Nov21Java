@@ -4,18 +4,18 @@ import java.util.Arrays;
 import java.util.Collection;
 
 public class QuestionThree {
-    public static void main(String[] args) {
-        var result = getQualifiedElements("All the apples are named Ann or Abe");
+    public static void main(final String[] args) {
+        final var result = QuestionThree.getQualifiedElements("All the apples are named Ann or Abe");
 
-        for (var item : result) {
+        for (final var item : result) {
             System.out.println(item);
         }
     }
 
     // Qualified elements must start with the letter "a" and be 3 characters long
-    public static Collection<String> getQualifiedElements(String input) {
+    public static Collection<String> getQualifiedElements(final String input) {
         return Arrays.stream(input.split("\s+"))
-                .map(word -> word.toLowerCase())
+                .map(String::toLowerCase)
                 .filter(word -> word.charAt(0) == 'a')
                 .filter(word -> word.length() == 3)
                 .toList();

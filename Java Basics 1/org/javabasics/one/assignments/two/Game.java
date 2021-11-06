@@ -4,80 +4,77 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Game {
-    private List<GameOverListener> listeners = new ArrayList<GameOverListener>();
-    private int answer;
-    private int guessesLeft;
+    private final List<GameOverListener> listeners = new ArrayList<GameOverListener>();
+    private final int answer;
     // Accept answers between upper and lower ranges
-    private int upperRange;
-    private int lowerRange;
+    private final int upperRange;
+    private final int lowerRange;
     // Minimum number user can guess
-    private int minGuess;
+    private final int minGuess;
     // Maximum number user can guess
-    private int maxGuess;
+    private final int maxGuess;
+    private int guessesLeft;
 
-    public Game(int totalGuesses, int minimum, int maximum) {
-        guessesLeft = totalGuesses;
-        minGuess = minimum;
-        maxGuess = maximum;
-        answer = getRandomNumber(minGuess, maxGuess);
-        upperRange = answer + 10;
-        lowerRange = answer - 10;
+    public Game(final int totalGuesses, final int minimum, final int maximum) {
+        this.guessesLeft = totalGuesses;
+        this.minGuess = minimum;
+        this.maxGuess = maximum;
+        this.answer = this.getRandomNumber(this.minGuess, this.maxGuess);
+        this.upperRange = this.answer + 10;
+        this.lowerRange = this.answer - 10;
     }
 
-    public void checkGuess(int guess) {
-        var isValidGuess = validateGuess(guess);
-        var isGuessWithinTen = isWithinBounds(guess, lowerRange, upperRange);
+    public void checkGuess(final int guess) {
+        final var isValidGuess = this.validateGuess(guess);
+        final var isGuessWithinTen = this.isWithinBounds(guess, this.lowerRange, this.upperRange);
 
-        if (! isValidGuess) {
-            System.out.println("Your guess has to be between " + minGuess + " and " + maxGuess);
+        if (!isValidGuess) {
+            System.out.println("Your guess has to be between " + this.minGuess + " and " + this.maxGuess);
             return;
         }
 
         if (isGuessWithinTen) {
-            broadcastGameOver(true);
+            this.broadcastGameOver(true);
             return;
         }
 
-        guessesLeft--;
+        this.guessesLeft--;
 
-        if (guessesLeft == 0) {
-            broadcastGameOver(false);
+        if (this.guessesLeft == 0) {
+            this.broadcastGameOver(false);
             return;
         }
 
         System.out.println("Keep guessing!");
     }
 
-    public void addListener(GameOverListener listner) {
-        listeners.add(listner);
+    public void addListener(final GameOverListener listner) {
+        this.listeners.add(listner);
     }
 
-    private int getRandomNumber(int min, int max) {
+    private int getRandomNumber(final int min, final int max) {
         return (int) ((Math.random() * (max - min)) + min);
     }
 
-    private boolean validateGuess(int guess) {
-        var isValid = isWithinBounds(guess, minGuess, maxGuess);
+    private boolean validateGuess(final int guess) {
+        final var isValid = this.isWithinBounds(guess, this.minGuess, this.maxGuess);
 
-        if (! isValid)
-            return false;
-
-        return true;
+        return isValid;
     }
 
-    private boolean isWithinBounds(int number, int min, int max) {
+    private boolean isWithinBounds(final int number, final int min, final int max) {
         return (number >= min && number <= max);
     }
 
-    private void broadcastGameOver(boolean isWin) {
-        String message;
+    private void broadcastGameOver(final boolean isWin) {
+        final String message;
 
         if (isWin)
-            message = "The correct answer was " + answer + ". Good job";
+            message = "The correct answer was " + this.answer + ". Good job";
         else
-            message = "Sorry, the answer was " + answer;
+            message = "Sorry, the answer was " + this.answer;
 
-        for (GameOverListener listener : listeners)
+        for (final GameOverListener listener : this.listeners)
             listener.onGameOver(message);
     }
 }
