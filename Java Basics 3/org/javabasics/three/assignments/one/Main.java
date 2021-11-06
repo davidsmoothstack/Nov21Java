@@ -27,12 +27,12 @@ public class Main {
             final var dirFile = new File(dir);
 
             final var fileNames = Arrays.stream(dirFile.listFiles())
-                    .map(f -> f.getName())
+                    .map(File::getName)
                     .toList();
 
             final var subDirs = Arrays.stream(dirFile.listFiles())
-                    .filter(file -> file.isDirectory())
-                    .map(file -> file.getAbsolutePath())
+                    .filter(File::isDirectory)
+                    .map(File::getAbsolutePath)
                     .toArray(String[]::new);
 
             returnList.addAll(fileNames);
