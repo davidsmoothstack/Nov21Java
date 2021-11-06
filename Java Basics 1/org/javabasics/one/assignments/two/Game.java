@@ -48,8 +48,8 @@ public class Game {
         System.out.println("Keep guessing!");
     }
 
-    public void addListener(final GameOverListener listner) {
-        this.listeners.add(listner);
+    public void addListener(final GameOverListener listener) {
+        this.listeners.add(listener);
     }
 
     private int getRandomNumber(final int min, final int max) {
