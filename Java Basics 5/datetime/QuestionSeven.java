@@ -9,10 +9,10 @@ public class QuestionSeven {
         final var notFridayThirteen = LocalDate.of(2021, 8, 14);
 
         // True
-        System.out.println(QuestionSeven.isFridayTheThirteenth(fridayThirteen));
+        System.out.println(isFridayTheThirteenth(fridayThirteen));
 
         // False
-        System.out.println(QuestionSeven.isFridayTheThirteenth(notFridayThirteen));
+        System.out.println(isFridayTheThirteenth(notFridayThirteen));
     }
 
     public static Boolean isFridayTheThirteenth(final LocalDate date) {

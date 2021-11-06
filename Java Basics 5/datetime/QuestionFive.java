@@ -1,6 +1,5 @@
 package datetime;
 
-import java.io.PrintStream;
 import java.time.LocalDate;
 
 public class QuestionFive {

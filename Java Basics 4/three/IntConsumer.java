@@ -2,8 +2,8 @@ package three;
 
 public class IntConsumer extends Thread {
     private static volatile int count;
-    private final IntBuffer buffer;
     public final Integer id;
+    private final IntBuffer buffer;
 
     public IntConsumer(final IntBuffer buffer) {
         this.buffer = buffer;
