@@ -16,13 +16,13 @@ public class Main {
     }
 
     public static Main getInstance() {
-        if (Main.instance == null) {
+        if (instance == null) {
             synchronized (Main.class) {
-                if (Main.instance == null)
-                    Main.instance = new Main();
+                if (instance == null)
+                    instance = new Main();
             }
         }
 
-        return Main.instance;
+        return instance;
     }
 }

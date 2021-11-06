@@ -9,7 +9,7 @@ import java.util.List;
 public class Main {
     public static void main(final String[] args) throws Exception {
         try {
-            final var directories = Main.listSubFiles("Java Basics 1", "Java Basics 2", "Java Basics 3");
+            final var directories = listSubFiles("Java Basics 1", "Java Basics 2", "Java Basics 3");
 
             for (final var fileName : directories) {
                 System.out.println(fileName);
@@ -37,7 +37,7 @@ public class Main {
 
             returnList.addAll(fileNames);
             // Recursive call
-            returnList.addAll(Main.listSubFiles(subDirs));
+            returnList.addAll(listSubFiles(subDirs));
         }
 
         return returnList;

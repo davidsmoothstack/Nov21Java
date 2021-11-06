@@ -7,7 +7,7 @@ public class Main {
     public static Random rng = new Random();
 
     public static void main(final String[] args) {
-        Main.initialize(5, 20, 20);
+        initialize(5, 20, 20);
     }
 
     /**
@@ -34,6 +34,6 @@ public class Main {
     }
 
     public static Integer randomRange(final Integer min, final Integer max) {
-        return Main.rng.nextInt(max - min) + min;
+        return rng.nextInt(max - min) + min;
     }
 }
