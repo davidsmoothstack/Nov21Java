@@ -57,9 +57,7 @@ public class Game {
     }
 
     private boolean validateGuess(final int guess) {
-        final var isValid = this.isWithinBounds(guess, this.minGuess, this.maxGuess);
-
-        return isValid;
+        return this.isWithinBounds(guess, this.minGuess, this.maxGuess);
     }
 
     private boolean isWithinBounds(final int number, final int min, final int max) {
