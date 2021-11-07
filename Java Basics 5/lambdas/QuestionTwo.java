@@ -17,7 +17,6 @@ public class QuestionTwo {
     }
 
     public static String generateIntString(final Collection<Integer> collection) {
-
         return collection.stream()
                 .map(i -> i % 2 == 0 ? "e" + i : "o" + i)
                 .collect(Collectors.joining(","));
