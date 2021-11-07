@@ -10,12 +10,12 @@ public class Main implements GameOverListener {
     }
 
     public void startGame() {
-        final var game = new Game(5, 1, 100);
+        final Game game = new Game(5, 1, 100);
         game.addListener(this);
 
         while (true) {
             System.out.print("Please guess a number: ");
-            final var guess = this.getConsoleInput();
+            final int guess = this.getConsoleInput();
             game.checkGuess(guess);
         }
     }

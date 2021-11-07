@@ -2,7 +2,7 @@ package assignment.one;
 
 public class Assessment {
     public static void main(String[] args) {
-        var input = new String[]{
+        String[] input = new String[]{
                 "5",
                 "1 4",
                 "2 5",

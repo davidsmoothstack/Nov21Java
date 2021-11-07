@@ -9,9 +9,9 @@ import java.util.List;
 public class Main {
     public static void main(final String[] args) {
         try {
-            final var directories = listSubFiles("Java Basics 1", "Java Basics 2", "Java Basics 3");
+            final List<String> directories = listSubFiles("Java Basics 1", "Java Basics 2", "Java Basics 3");
 
-            for (final var fileName : directories) {
+            for (final String fileName : directories) {
                 System.out.println(fileName);
             }
         }
@@ -21,16 +21,16 @@ public class Main {
     }
 
     private static List<String> listSubFiles(final String... directoryPaths) throws IOException {
-        final var returnList = new ArrayList<String>();
+        final ArrayList<String> returnList = new ArrayList<String>();
 
-        for (final var dir : directoryPaths) {
-            final var dirFile = new File(dir);
+        for (final String dir : directoryPaths) {
+            final File dirFile = new File(dir);
 
-            final var fileNames = Arrays.stream(dirFile.listFiles())
+            final List<String> fileNames = Arrays.stream(dirFile.listFiles())
                     .map(File::getName)
                     .toList();
 
-            final var subDirs = Arrays.stream(dirFile.listFiles())
+            final String[] subDirs = Arrays.stream(dirFile.listFiles())
                     .filter(File::isDirectory)
                     .map(File::getAbsolutePath)
                     .toArray(String[]::new);

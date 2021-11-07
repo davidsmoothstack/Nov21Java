@@ -34,14 +34,14 @@ public class LineTests {
     @Test
     public void parallelTo_returns_true_whenLinesAreParallel() {
         this.sut = new Line(1, 2, 3, 4);
-        final var parallel = new Line(2, 4, 6, 8);
+        final Line parallel = new Line(2, 4, 6, 8);
 
         assertEquals(true, this.sut.parallelTo(parallel));
     }
 
     @Test
     public void parallelTo_returns_false_whenLinesAreNotParallel() {
-        final var notParallel = new Line(10, 20, 30, 40);
+        final Line notParallel = new Line(10, 20, 30, 40);
 
         assertEquals(false, this.sut.parallelTo(notParallel));
     }

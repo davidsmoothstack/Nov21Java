@@ -22,8 +22,8 @@ public class Main {
     }
 
     private static void printRightTriangle(final int width, final TriangleGrowth growth) {
-        var i = 1;
-        var iterator = 1;
+        int i = 1;
+        int iterator = 1;
         Predicate<Integer> loopPredicate = n -> n <= width;
 
         if (growth == TriangleGrowth.SHRINK) {
@@ -38,7 +38,7 @@ public class Main {
 
     private static void printIsoscelesTriangle(final int width, final TriangleGrowth growth) {
         // Triangle in the example always has a padding of 2
-        final var padding = 2;
+        final int padding = 2;
         int spaceCount;
         int starCount;
 
@@ -69,7 +69,7 @@ public class Main {
     }
 
     private static void repeat(final int count, final String content, final boolean addNewLine) {
-        for (var i = 0; i < count; i++)
+        for (int i = 0; i < count; i++)
             System.out.print(content);
 
         if (addNewLine)

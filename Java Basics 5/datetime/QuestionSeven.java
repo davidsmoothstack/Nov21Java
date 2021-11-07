@@ -5,8 +5,8 @@ import java.time.LocalDate;
 
 public class QuestionSeven {
     public static void main(final String[] args) {
-        final var fridayThirteen = LocalDate.of(2021, 8, 13);
-        final var notFridayThirteen = LocalDate.of(2021, 8, 14);
+        final LocalDate fridayThirteen = LocalDate.of(2021, 8, 13);
+        final LocalDate notFridayThirteen = LocalDate.of(2021, 8, 14);
 
         // True
         System.out.println(isFridayTheThirteenth(fridayThirteen));

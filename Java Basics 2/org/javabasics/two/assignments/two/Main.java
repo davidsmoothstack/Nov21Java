@@ -5,7 +5,7 @@ public class Main {
         final Integer[][] arr = new Integer[100][100];
 
         populate2dArray(arr, 1, 100_000);
-        final var largest = getLargestElement(arr);
+        final BiggestElement largest = getLargestElement(arr);
 
         System.out.printf("The largest element in the array is %d at position array[%d][%d]",
                 largest.value(),
@@ -29,11 +29,11 @@ public class Main {
     }
 
     private static BiggestElement getLargestElement(final Integer[][] arr) {
-        var largest = new BiggestElement(arr[0][0], 0, 0);
+        BiggestElement largest = new BiggestElement(arr[0][0], 0, 0);
 
         for (int y = 0; y < arr.length; y++) {
             for (int x = 0; x < arr[y].length; x++) {
-                final var currentInt = arr[y][x];
+                final Integer currentInt = arr[y][x];
                 if (currentInt > largest.value())
                     largest = new BiggestElement(currentInt, y, x);
             }
