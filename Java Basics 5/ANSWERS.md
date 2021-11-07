@@ -10,11 +10,11 @@
 
 ## Date-Time API
 
-1. java.time.LocalDateTime
+1. ``java.time.LocalDateTime``
 
-2. Subtract 1 week from the date, then get the 5th day of that week
+2. ``randomDate.with(TemporalAdjuster.previous(DayOfWeek.THURSDAY));``
 
-3. ZoneOffset show the UTC offset where ZoneId shows the timezone ID
+3. ZoneOffset shows the UTC offset and ZoneId shows the timezone ID
 
 4. [View Code](datetime/QuestionFour.java)
 
