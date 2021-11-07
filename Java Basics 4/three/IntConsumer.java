@@ -1,36 +1,32 @@
 package three;
 
-import java.lang.Thread;
-
 public class IntConsumer extends Thread {
-    private IntBuffer buffer;
     private static volatile int count;
-    public Integer id;
+    public final Integer id;
+    private final IntBuffer buffer;
 
-    public IntConsumer(IntBuffer buffer) {
-        super();
+    public IntConsumer(final IntBuffer buffer) {
         this.buffer = buffer;
-        this.id = ++count;
+        id = ++IntConsumer.count;
     }
 
     @Override
     public void run() {
         try {
             while (true) {
-                synchronized (buffer) {
-                    if (buffer.isEmpty())
+                synchronized (this.buffer) {
+                    if (this.buffer.isEmpty())
                         continue;
 
-                    var value = buffer.pop().get();
+                    final var value = this.buffer.pop().get();
 
-                    System.out.println(
-                            String.format("Consumer %d consumed %d", id, value));
+                    System.out.printf("Consumer %d consumed %d\n", this.id, value);
                 }
 
                 Thread.sleep(Main.randomRange(3_000, 5_000));
             }
         }
-        catch (Exception e) {
+        catch (final Exception e) {
             System.out.println("Error in consumer: " + e.getMessage());
         }
     }

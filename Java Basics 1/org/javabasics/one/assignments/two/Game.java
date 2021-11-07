@@ -4,80 +4,75 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Game {
-  private List<GameOverListener> listeners = new ArrayList<GameOverListener>();
-  private int answer;
-  private int guessesLeft;
-  // Accept answers between upper and lower ranges
-  private int upperRange;
-  private int lowerRange;
-  // Minimum number user can guess
-  private int minGuess;
-  // Maximum number user can guess
-  private int maxGuess;
+    private final List<GameOverListener> listeners = new ArrayList<>();
+    private final int answer;
+    // Accept answers between upper and lower ranges
+    private final int upperRange;
+    private final int lowerRange;
+    // Minimum number user can guess
+    private final int minGuess;
+    // Maximum number user can guess
+    private final int maxGuess;
+    private int guessesLeft;
 
-  public Game(int totalGuesses, int minimum, int maximum) {
-    guessesLeft = totalGuesses;
-    minGuess = minimum;
-    maxGuess = maximum;
-    answer = getRandomNumber(minGuess, maxGuess);
-    upperRange = answer + 10;
-    lowerRange = answer - 10;
-  }
-
-  public void checkGuess(int guess) {
-    var isValidGuess = validateGuess(guess);
-    var isGuessWithinTen = isWithinBounds(guess, lowerRange, upperRange);
-
-    if (!isValidGuess) {
-      System.out.println("Your guess has to be between " + minGuess + " and " + maxGuess);
-      return;
+    public Game(final int totalGuesses, final int minimum, final int maximum) {
+        this.guessesLeft = totalGuesses;
+        this.minGuess = minimum;
+        this.maxGuess = maximum;
+        this.answer = this.getRandomNumber(this.minGuess, this.maxGuess);
+        this.upperRange = this.answer + 10;
+        this.lowerRange = this.answer - 10;
     }
 
-    if (isGuessWithinTen) {
-      broadcastGameOver(true);
-      return;
+    public void checkGuess(final int guess) {
+        final var isValidGuess = this.validateGuess(guess);
+        final var isGuessWithinTen = this.isWithinBounds(guess, this.lowerRange, this.upperRange);
+
+        if (!isValidGuess) {
+            System.out.println("Your guess has to be between " + this.minGuess + " and " + this.maxGuess);
+            return;
+        }
+
+        if (isGuessWithinTen) {
+            this.broadcastGameOver(true);
+            return;
+        }
+
+        this.guessesLeft--;
+
+        if (this.guessesLeft == 0) {
+            this.broadcastGameOver(false);
+            return;
+        }
+
+        System.out.println("Keep guessing!");
     }
 
-    guessesLeft--;
-
-    if (guessesLeft == 0) {
-      broadcastGameOver(false);
-      return;
+    public void addListener(final GameOverListener listener) {
+        this.listeners.add(listener);
     }
 
-    System.out.println("Keep guessing!");
-  }
+    private int getRandomNumber(final int min, final int max) {
+        return (int) ((Math.random() * (max - min)) + min);
+    }
 
-  public void addListener(GameOverListener listner) {
-    listeners.add(listner);
-  }
+    private boolean validateGuess(final int guess) {
+        return this.isWithinBounds(guess, this.minGuess, this.maxGuess);
+    }
 
-  private int getRandomNumber(int min, int max) {
-    return (int) ((Math.random() * (max - min)) + min);
-  }
+    private boolean isWithinBounds(final int number, final int min, final int max) {
+        return (number >= min && number <= max);
+    }
 
-  private boolean validateGuess(int guess) {
-    var isValid = isWithinBounds(guess, minGuess, maxGuess);
+    private void broadcastGameOver(final boolean isWin) {
+        final String message;
 
-    if (!isValid)
-      return false;
+        if (isWin)
+            message = "The correct answer was " + this.answer + ". Good job";
+        else
+            message = "Sorry, the answer was " + this.answer;
 
-    return true;
-  }
-
-  private boolean isWithinBounds(int number, int min, int max) {
-    return (number >= min && number <= max);
-  }
-
-  private void broadcastGameOver(boolean isWin) {
-    String message;
-
-    if (isWin)
-      message = "The correct answer was " + answer + ". Good job";
-    else
-      message = "Sorry, the answer was " + answer;
-
-    for (GameOverListener listener : listeners)
-      listener.onGameOver(message);
-  }
+        for (final GameOverListener listener : this.listeners)
+            listener.onGameOver(message);
+    }
 }

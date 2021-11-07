@@ -2,7 +2,10 @@ package four;
 
 public class Line {
     // private member data
-    private double x0, y0, x1, y1;
+    private final double x0;
+    private final double y0;
+    private final double x1;
+    private final double y1;
 
     // construct a line object
     public Line(double x0, double y0, double x1, double y1) {

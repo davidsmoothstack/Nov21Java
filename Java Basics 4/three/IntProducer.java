@@ -1,35 +1,33 @@
 package three;
 
 public class IntProducer extends Thread {
-    private IntBuffer buffer;
     private static volatile int count;
-    public Integer id;
+    public final Integer id;
+    private final IntBuffer buffer;
 
-    public IntProducer(IntBuffer buffer) {
-        super();
+    public IntProducer(final IntBuffer buffer) {
         this.buffer = buffer;
-        this.id = ++count;
+        id = ++IntProducer.count;
     }
 
     @Override
     public void run() {
         try {
             while (true) {
-                synchronized (buffer) {
-                    if (buffer.isFull())
+                synchronized (this.buffer) {
+                    if (this.buffer.isFull())
                         continue;
 
-                    var randomInt = Main.randomRange(1, 999);
-                    buffer.push(randomInt);
+                    final var randomInt = Main.randomRange(1, 999);
+                    this.buffer.push(randomInt);
 
-                    System.out.println(
-                            String.format("Producer %d produced %d", id, randomInt));
+                    System.out.printf("Producer %d produced %d\n", this.id, randomInt);
                 }
 
                 Thread.sleep(Main.randomRange(3_000, 5_000));
             }
         }
-        catch (Exception e) {
+        catch (final Exception e) {
             System.out.println("Error in producer: " + e.getMessage());
         }
     }
