@@ -1,10 +1,11 @@
 package assignment.four;
 
 import java.util.Collection;
+import java.util.List;
 
 public class Assessment {
     public static Collection<String> removeLetterX(Collection<String> stringCollection) {
-        var intStreams = stringCollection.stream()
+        List<String> intStreams = stringCollection.stream()
                 .map(Assessment::filterOutX)
                 .toList();
 
@@ -12,8 +13,8 @@ public class Assessment {
     }
 
     private static String filterOutX(String input) {
-        var charStream = input.chars().toArray();
-        var builder = new StringBuilder();
+        int[] charStream = input.chars().toArray();
+        StringBuilder builder = new StringBuilder();
 
         for (int ch : charStream) {
             if (ch == 'x')

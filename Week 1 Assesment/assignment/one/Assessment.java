@@ -23,9 +23,9 @@ public class Assessment {
             Integer methodId = Integer.parseInt(inputSplit[0]);
             Integer lambdaArgument = Integer.parseInt(inputSplit[1]);
 
-            // Get the lambda function and apply it to the lambda argument
-            var fn = retrieveOperation(methodId);
-            var result = fn.apply(lambdaArgument);
+            // Get   the lambda function and apply it to the lambda argument
+            PerformOperation fn = retrieveOperation(methodId);
+            OperationResult result = fn.apply(lambdaArgument);
 
             // Print the result
             System.out.println(result);
@@ -39,24 +39,18 @@ public class Assessment {
      * @return A lambda that performs an operation
      */
     public static PerformOperation retrieveOperation(Integer methodId) {
-        switch (methodId) {
-            case 1:
-                return isOdd();
-            case 2:
-                return isPrime();
-            case 3:
-                return isPalindrome();
-            default:
-                throw new IllegalArgumentException("Invalid method id");
-        }
+        return switch (methodId) {
+            case 1 -> isOdd();
+            case 2 -> isPrime();
+            case 3 -> isPalindrome();
+            default -> throw new IllegalArgumentException("Invalid method id");
+        };
     }
 
     public static PerformOperation isOdd() {
-        return n -> {
-            return (n % 2 == 0)
-                    ? OperationResult.EVEN
-                    : OperationResult.ODD;
-        };
+        return n -> (n % 2 == 0)
+                ? OperationResult.EVEN
+                : OperationResult.ODD;
     }
 
     public static PerformOperation isPrime() {

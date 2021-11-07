@@ -33,7 +33,7 @@ public class AssessmentTests {
 
     @Test
     public void getRightMostDigit_returns_theRightMostDigits() {
-        var actual = Assessment.getRightMostDigit(input)
+        Integer[] actual = Assessment.getRightMostDigit(input)
                 .toArray(Integer[]::new);
 
         Assert.assertArrayEquals(expected.toArray(), actual);

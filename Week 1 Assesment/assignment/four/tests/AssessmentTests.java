@@ -33,7 +33,7 @@ public class AssessmentTests {
 
     @Test
     public void removeLetterX_returns_stringsWithoutLetterX() {
-        var actual = Assessment.removeLetterX(input)
+        String[] actual = Assessment.removeLetterX(input)
                 .toArray(String[]::new);
 
         Assert.assertArrayEquals(expected.toArray(), actual);
