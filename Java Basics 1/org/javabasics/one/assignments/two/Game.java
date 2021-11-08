@@ -25,8 +25,8 @@ public class Game {
     }
 
     public void checkGuess(final int guess) {
-        final var isValidGuess = this.validateGuess(guess);
-        final var isGuessWithinTen = this.isWithinBounds(guess, this.lowerRange, this.upperRange);
+        final boolean isValidGuess = this.validateGuess(guess);
+        final boolean isGuessWithinTen = this.isWithinBounds(guess, this.lowerRange, this.upperRange);
 
         if (!isValidGuess) {
             System.out.println("Your guess has to be between " + this.minGuess + " and " + this.maxGuess);

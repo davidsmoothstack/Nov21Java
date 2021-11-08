@@ -5,9 +5,9 @@ import java.util.Collection;
 
 public class QuestionThree {
     public static void main(final String[] args) {
-        final var result = QuestionThree.getQualifiedElements("All the apples are named Ann or Abe");
+        final Collection<String> result = QuestionThree.getQualifiedElements("All the apples are named Ann or Abe");
 
-        for (final var item : result) {
+        for (final String item : result) {
             System.out.println(item);
         }
     }

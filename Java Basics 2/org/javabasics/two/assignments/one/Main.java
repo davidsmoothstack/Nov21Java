@@ -2,9 +2,9 @@ package org.javabasics.two.assignments.one;
 
 public class Main {
     public static void main(final String[] args) {
-        var total = 0;
+        int total = 0;
 
-        for (final var argument : args)
+        for (final String argument : args)
             total += parseInput(argument);
 
         System.out.println("The total is: " + total);

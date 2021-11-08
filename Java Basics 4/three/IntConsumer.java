@@ -18,7 +18,7 @@ public class IntConsumer extends Thread {
                     if (this.buffer.isEmpty())
                         continue;
 
-                    final var value = this.buffer.pop().get();
+                    final Integer value = this.buffer.pop().get();
 
                     System.out.printf("Consumer %d consumed %d\n", this.id, value);
                 }

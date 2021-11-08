@@ -1,12 +1,13 @@
 package one;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class Main {
     private static volatile Main instance;
 
     public static void main(final String[] args) {
-        final var objectList = Arrays.asList(new Object[10]);
+        final List<Object> objectList = Arrays.asList(new Object[10]);
 
         // All instances should have the same hash code
         objectList.stream()

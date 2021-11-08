@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class QuestionOne {
 
     public static void main(final String[] args) {
-        final var words = "Earl and Edward have eaten the most egregious eggs I've ever lain my eyes on"
+        final String[] words = "Earl and Edward have eaten the most egregious eggs I've ever lain my eyes on"
                 .toLowerCase()
                 .split("\s+");
 
@@ -41,7 +41,7 @@ public class QuestionOne {
         System.out.println();
         System.out.println(comment);
 
-        for (final var item : arr) {
+        for (final T item : arr) {
             System.out.println(item);
         }
     }

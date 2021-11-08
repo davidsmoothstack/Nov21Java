@@ -18,7 +18,7 @@ public class IntProducer extends Thread {
                     if (this.buffer.isFull())
                         continue;
 
-                    final var randomInt = Main.randomRange(1, 999);
+                    final Integer randomInt = Main.randomRange(1, 999);
                     this.buffer.push(randomInt);
 
                     System.out.printf("Producer %d produced %d\n", this.id, randomInt);

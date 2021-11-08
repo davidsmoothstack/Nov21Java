@@ -34,7 +34,7 @@ public class IntBuffer implements Iterable<Integer> {
         if (this.isEmpty())
             return Optional.empty();
 
-        final var removed = this.iterator().next();
+        final Integer removed = this.iterator().next();
         this.intCollection.remove(removed);
 
         return Optional.of(removed);

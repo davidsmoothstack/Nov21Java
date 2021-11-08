@@ -6,9 +6,9 @@ import java.time.LocalDate;
 public class QuestionSix {
     public static void main(final String[] args) {
         // Use this dates month
-        final var date = LocalDate.now();
+        final LocalDate date = LocalDate.now();
 
-        var tempDate = date.withDayOfMonth(1);
+        LocalDate tempDate = date.withDayOfMonth(1);
 
         while (tempDate.getMonth() == date.getMonth()) {
             if (tempDate.getDayOfWeek() == DayOfWeek.MONDAY)

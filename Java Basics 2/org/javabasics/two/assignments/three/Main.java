@@ -6,9 +6,9 @@ import org.javabasics.two.assignments.three.shapes.Triangle;
 
 public class Main {
     public static void main(final String[] args) {
-        final var circle = new Circle(6d);
-        final var triangle = new Triangle(100d, 100d);
-        final var rectangle = new Rectangle(10d, 10d);
+        final Circle circle = new Circle(6d);
+        final Triangle triangle = new Triangle(100d, 100d);
+        final Rectangle rectangle = new Rectangle(10d, 10d);
 
         circle.display();
         triangle.display();

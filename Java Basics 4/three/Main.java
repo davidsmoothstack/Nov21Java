@@ -18,7 +18,7 @@ public class Main {
      * @param producerCount Total number of IntBuffers
      */
     public static void initialize(final Integer bufferSize, final Integer producerCount, final Integer consumerCount) {
-        final var buffer = new IntBuffer(bufferSize);
+        final IntBuffer buffer = new IntBuffer(bufferSize);
 
         // Create and run the producers
         Stream.of(new IntProducer[producerCount])

@@ -6,7 +6,7 @@ public class Main {
         Object lockObj2 = new Object();
 
         // Thread 1
-        final var t1 = new Thread(() -> {
+        final Thread t1 = new Thread(() -> {
             synchronized (lockObj1) {
                 try {
                     System.out.println("T1 locked resource 1");
@@ -26,7 +26,7 @@ public class Main {
         });
 
         // Thread 2
-        final var t2 = new Thread(() -> {
+        final Thread t2 = new Thread(() -> {
             synchronized (lockObj2) {
                 try {
                     System.out.println("T2 locked resource 2");
