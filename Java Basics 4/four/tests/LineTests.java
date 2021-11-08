@@ -8,6 +8,7 @@ import four.Line;
 import static org.junit.Assert.assertEquals;
 
 public class LineTests {
+    public static final double DELTA = 0.0001;
     private Line sut;
 
     @Before
@@ -17,7 +18,7 @@ public class LineTests {
 
     @Test
     public void getSlope_returns_correctSlope() {
-        assertEquals(2, this.sut.getSlope(), 0.0001);
+        assertEquals(2, this.sut.getSlope(), DELTA);
     }
 
     @Test(expected = ArithmeticException.class)
@@ -28,7 +29,8 @@ public class LineTests {
 
     @Test
     public void getDistance_returns_correctDistance() {
-        assertEquals(4.47213595499958, this.sut.getDistance(), 0.0001);
+        double expected = 4.47213595499958;
+        assertEquals(expected, this.sut.getDistance(), DELTA);
     }
 
     @Test

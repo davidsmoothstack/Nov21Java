@@ -20,8 +20,10 @@ public class Main {
         }
     }
 
-    private static List<String> listSubFiles(final String... directoryPaths) throws IOException {
-        final ArrayList<String> returnList = new ArrayList<String>();
+    private static List<String> listSubFiles(final String... directoryPaths) throws
+            IOException
+    {
+        final ArrayList<String> returnList = new ArrayList<>();
 
         for (final String dir : directoryPaths) {
             final File dirFile = new File(dir);

@@ -9,15 +9,19 @@ public class Main {
 
         System.out.printf("The largest element in the array is %d at position array[%d][%d]",
                 largest.value(),
-                largest.positionX(),
-                largest.positionY());
+                largest.positionY(),
+                largest.positionX());
     }
 
     private static Integer getRandomNumber(final Integer min, final Integer max) {
         return (int) ((Math.random() * (max - min)) + min);
     }
 
-    private static void populate2dArray(final Integer[][] arr, final Integer min, final Integer max) {
+    private static void populate2dArray(
+            final Integer[][] arr,
+            final Integer min,
+            final Integer max)
+    {
         if (min >= max) {
             System.out.println("Min must be greater than max");
             System.exit(0);

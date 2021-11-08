@@ -25,9 +25,18 @@ public class AssessmentTests {
     public static List<Object[]> testData() {
         // List of Object[] that contain the input and expected result respectively
         return List.of(
-                new Object[]{ Arrays.asList("ax", "bb", "cx"), Arrays.asList("a", "bb", "c") },
-                new Object[]{ Arrays.asList("xxax", "xbxbx", "xxcx"), Arrays.asList("a", "bb", "c") },
-                new Object[]{ Arrays.asList("x"), Arrays.asList("") }
+                new Object[]{
+                        Arrays.asList("ax", "bb", "cx"),
+                        Arrays.asList("a", "bb", "c")
+                },
+                new Object[]{
+                        Arrays.asList("xxax", "xbxbx", "xxcx"),
+                        Arrays.asList("a", "bb", "c")
+                },
+                new Object[]{
+                        Arrays.asList("x"),
+                        Arrays.asList("")
+                }
         );
     }
 

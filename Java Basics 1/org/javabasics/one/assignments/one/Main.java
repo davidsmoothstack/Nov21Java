@@ -21,7 +21,10 @@ public class Main {
         printIsoscelesTriangle(7, TriangleGrowth.SHRINK);
     }
 
-    private static void printRightTriangle(final int width, final TriangleGrowth growth) {
+    private static void printRightTriangle(
+            final int width,
+            final TriangleGrowth growth)
+    {
         int i = 1;
         int iterator = 1;
         Predicate<Integer> loopPredicate = n -> n <= width;
@@ -36,7 +39,10 @@ public class Main {
             repeat(i, "*", true);
     }
 
-    private static void printIsoscelesTriangle(final int width, final TriangleGrowth growth) {
+    private static void printIsoscelesTriangle(
+            final int width,
+            final TriangleGrowth growth)
+    {
         // Triangle in the example always has a padding of 2
         final int padding = 2;
         int spaceCount;
@@ -68,7 +74,11 @@ public class Main {
         }
     }
 
-    private static void repeat(final int count, final String content, final boolean addNewLine) {
+    private static void repeat(
+            final int count,
+            final String content,
+            final boolean addNewLine)
+    {
         for (int i = 0; i < count; i++)
             System.out.print(content);
 

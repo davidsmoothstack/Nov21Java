@@ -17,7 +17,11 @@ public class Main {
      * @param consumerCount Total number of IntConsumers
      * @param producerCount Total number of IntBuffers
      */
-    public static void initialize(final Integer bufferSize, final Integer producerCount, final Integer consumerCount) {
+    public static void initialize(
+            final Integer bufferSize,
+            final Integer producerCount,
+            final Integer consumerCount)
+    {
         final IntBuffer buffer = new IntBuffer(bufferSize);
 
         // Create and run the producers

@@ -4,13 +4,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Assessment {
-    public static Boolean groupSumClump(Integer sum, List<Integer> integers, Integer target) {
+    public static Boolean groupSumClump(
+            Integer sum,
+            List<Integer> integers,
+            Integer target)
+    {
         List<Integer> clumped = clumpCollection(integers);
         return solve(sum, clumped, target);
     }
 
+    /**
+     * Groups, then adds adjacent elements together in a List of Integers if they are the same value
+     *
+     * @param integers List of Integers to group
+     * @return A grouped List of Integers
+     */
     private static List<Integer> clumpCollection(List<Integer> integers) {
-        ArrayList<Integer> returnList = new ArrayList<Integer>();
+        ArrayList<Integer> returnList = new ArrayList<>();
         Integer pointer1 = 0, pointer2 = 0, index = 0;
 
         while (pointer2 < integers.size()) {
