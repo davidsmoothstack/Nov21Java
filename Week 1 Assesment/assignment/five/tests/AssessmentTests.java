@@ -35,7 +35,7 @@ public class AssessmentTests {
     }
 
     @Test
-    public void groupSumClump_returns_true_whenClumpIsPossible() {
+    public void groupSumClump_returns_correctValue() {
         Boolean actual = Assessment.groupSumClump(0, input, target);
 
         Assert.assertEquals(expected, actual);
