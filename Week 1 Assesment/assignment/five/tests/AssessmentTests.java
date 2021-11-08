@@ -13,8 +13,8 @@ import assignment.five.Assessment;
 @RunWith(Parameterized.class)
 public class AssessmentTests {
     private final List<Integer> input;
-    private final  Integer target;
-    private final  Boolean expected;
+    private final Integer target;
+    private final Boolean expected;
 
     public AssessmentTests(List<Integer> input, Integer target, Boolean expected) {
         this.input = input;
@@ -28,9 +28,9 @@ public class AssessmentTests {
         return List.of(
                 new Object[]{ Arrays.asList(1, 1, 2, 1, 1), 3, false },
                 new Object[]{ Arrays.asList(1, 1, 2, 1, 1), 6, true },
-                new Object[]{ Arrays.asList(2,4,8), 10, true },
-                new Object[]{ Arrays.asList(1,2,4,8,1), 14, true },
-                new Object[]{ Arrays.asList(2,4,4,8), 14, false }
+                new Object[]{ Arrays.asList(2, 4, 8), 10, true },
+                new Object[]{ Arrays.asList(1, 2, 4, 8, 1), 14, true },
+                new Object[]{ Arrays.asList(2, 4, 4, 8), 14, false }
         );
     }
 

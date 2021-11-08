@@ -26,8 +26,8 @@ public class AssessmentTests {
     public static List<Object[]> testData() {
         // List of Object[] that contain the input and expected result respectively
         return List.of(
-                new Object[]{ Arrays.asList(1,2,3), Arrays.asList(2,4,6) },
-                new Object[]{ Arrays.asList(6,8,6,8,-1), Arrays.asList(12,16,12,16,-2) },
+                new Object[]{ Arrays.asList(1, 2, 3), Arrays.asList(2, 4, 6) },
+                new Object[]{ Arrays.asList(6, 8, 6, 8, -1), Arrays.asList(12, 16, 12, 16, -2) },
                 new Object[]{ Collections.emptyList(), Collections.emptyList() }
         );
     }

@@ -40,7 +40,7 @@ public class Assessment {
             int newSum = sum + value;
 
             // Create a new list without the used element
-            var newList = new ArrayList<>(integers);
+            ArrayList<Integer> newList = new ArrayList<>(integers);
             newList.remove(value);
 
             Boolean canSolve = solve(newSum, newList, target);
