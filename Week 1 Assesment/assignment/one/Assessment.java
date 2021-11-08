@@ -11,6 +11,10 @@ public class Assessment {
                 "2 12"
         };
 
+        parseInput(input);
+    }
+
+    private static void parseInput(String[] input) {
         // Get the amount of test cases to parse
         Integer lineCount = Integer.parseInt(input[0]);
 
